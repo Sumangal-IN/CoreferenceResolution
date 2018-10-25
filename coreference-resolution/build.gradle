@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.tcs.nltk'
+version = '0.0.1-SNAPSHOT'
+
+description = """coreference-resolution"""
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+	compile group: 'org.apache.opennlp', name: 'opennlp-tools', version: '1.9.0'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
